@@ -6,10 +6,10 @@ global:
   ericsson:
     licensing:
       licenseDomains:
-        - productType: PACKET_CORE_CONTROLLER
-          customerId: '940157'
-          swltId: "BHARTI_PCC-SM_00"
-  applicationId: "MPGVPRHCK01ERPCCSM01"
+        - productType: 
+          customerId: 
+          swltId: 
+  applicationId: 
   timezone: Asia/Kolkata
   licensing:
     sites:
@@ -110,8 +110,8 @@ eric-pc-sm:
         enabled: true
       namfnotification-ipv6:
         annotations:
-          metallb.universe.tf/address-pool: smf-nsmf-service
-          metallb.universe.tf/allow-shared-ip: smf-nsmf-service
+          metallb.universe.tf/address-pool: 
+          metallb.universe.tf/allow-shared-ip: 
         type: LoadBalancer
       nudmnotification-ipv6:
         annotations:
@@ -461,12 +461,12 @@ eric-cloud-native-base:
     egress:
       syslog:
         remoteHosts:
-          - host: 2401:4900:0024:0506::10
-            port: '6514'
-            sourcehost: MPGVPRHCK01ERPCCSM01    ###Need to update name
-          - host: 2401:4900:0054:1000::63a
-            port: '514'
-            sourcehost: MPGVPRHCK01ERPCCSM01    ###Need to update name
+          - host: 
+            port: 
+            sourcehost:     
+          - host: 
+            port: 
+            sourcehost: 
         tls:
           enabled: false
         certificates:
@@ -562,7 +562,7 @@ eric-cloud-native-base:
 #        loadBalancerIP: <Ingress Controller Service IPv4 address>
       externalIPv6:
         enabled: true
-        loadBalancerIP: 2401:4900:90:1000::9c3
+        loadBalancerIP: 
         annotations:
           addressPoolName: smf-oam
 #          metallb.universe.tf/address-pool: smf-oam
