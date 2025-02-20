@@ -1,5 +1,5 @@
 import yaml
-
+import re
 # Define the mapping from the Day0filechanges.txt data
 updates = {
     'global': {
@@ -15,9 +15,53 @@ updates = {
             }
         },
         'timezone': 'Asia/Kolkata',  # Update Timezone
+        'applicationId': 'MPGVPRHCK01ERPCCSM01',  # Update Application ID
     },
-    'applicationId': 'MPGVPRHCK01ERPCCSM01',  # Update Application ID
-}
+
+    'eric-pc-sm': {
+        'eric-pc-sm-notification-forwarder': {
+            'services': {
+                'namfnotification-ipv6': {
+                    'annotations': {
+                        'metallb.universe.tf/address-pool': 'smf-nsmf-service',
+                        'metallb.universe.tf/allow-shared-ip': 'smf-nsmf-service'
+                    }
+                }
+            }
+        }
+    },
+	
+    'eric-cloud-native-base': {
+        'eric-tm-ingress-controller-cr': {
+            'service': {
+                'externalIPv6': {
+                    'loadBalancerIP': '2401:4900:90:1000::9c3'
+                }
+            }
+        }
+    },
+
+    'eric-cloud-native-base': {
+        'eric-log-transformer': {
+            'egress': {
+                    'syslog': {
+                        'remoteHosts': [
+                            {
+                                'host': '2401:4900:0024:0506::10',
+                                'port': '6514',
+                                'sourcehost': 'MPGVPRHCK01ERPCCSM01'
+                            },
+                            {
+                                'host': '2401:4900:90:1000::9c7',
+                                'port': '514',
+                                'sourcehost': 'MPGVPRHCK01ERPCCSM01'
+                            }
+                        ]
+                    }
+            }
+        }
+	}
+}	
 
 def update_yaml(yaml_file_path, updates):
     # Load the existing YAML file
