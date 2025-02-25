@@ -7,9 +7,9 @@ global:
   ericsson:
     licensing:
       licenseDomains:
-        - productType: ''
-          customerId: ""
-          swltId: ''            # To be checked
+        - productType:
+          customerId: 
+          swltId:           # To be checked
   licensing:
     sites:
       - hostname: ''
