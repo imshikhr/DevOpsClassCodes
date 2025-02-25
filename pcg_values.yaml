@@ -7,16 +7,16 @@ global:
   ericsson:
     licensing:
       licenseDomains:
-        - customerId: "940157"
-          productType: 'PACKET_CORE_GATEWAY'
-          swltId: 'BHARTI_PCG-UP_00'            # To be checked
+        - productType: ''
+          customerId: ""
+          swltId: ''            # To be checked
   licensing:
     sites:
-      - hostname: 'uppal.nels'
-        ip: 2401:4900:d4:1600::0a14       ###Uppal
+      - hostname: ''
+        ip: ''      ###Uppal
         priority: 30
-      - hostname: 'vijaywada.nels'
-        ip: 2401:4900:d4:1700::05ee     ###Vijaywada                       ###Syntax to be verified.
+      - hostname: ''
+        ip: ''     ###Vijaywada                       ###Syntax to be verified.
         priority: 50
   timezone: Asia/Kolkata
   nodeSelector:
@@ -292,7 +292,7 @@ eric-cloud-native-base:
     service:
       externalIPv6 :
         enabled: true
-        loadBalancerIP: 2401:4900:54:e00::1630
+        loadBalancerIP: 
         annotations:
           addressPoolName: pcg-oam
           sharedVIPLabel: pcg-oam
@@ -362,10 +362,10 @@ eric-cloud-native-base:
           - contains: -privacy-
             field: "[metadata][category]"
         remoteHosts:
-          - host: 2401:4900:0024:0506::d                        #SIEM hashed out after testing
-            port: 61542
-          - host: 2401:4900:54:e00::1634                        #CAC-Alog from IP Plan
-            port: 514            
+          - host:                        #SIEM hashed out after testing
+            port: 
+          - host:                        #CAC-Alog from IP Plan
+            port:             
         tls:
           enabled: false
         filter: ruby { code => "event.set('message', event.get('[message]')+' '+event.get('[subject]').to_s || '-')" }
