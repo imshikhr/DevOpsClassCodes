@@ -87,19 +87,19 @@ def read_updates_from_file(file_path):
     
     # This list corresponds to the positions where the values will be inserted
     values = [
-        lines[0].strip(),  # PACKET_CORE_CONTROLLER
-        lines[1].strip(),  # 940157 (customerId)
-        lines[2].strip(),  # BHARTI_PCC-SM_00 (swltId)
-        lines[3].strip(),  # MPGVPRHCK01ERPCCSM01 (applicationId)
-        lines[4].strip(),  # smf-nsmf-service (address-pool)
-        lines[5].strip(),  # smf-nsmf-service (allow-shared-ip)
-        lines[6].strip(),  # loadbalancer IP (loadbalancer ip)
-        lines[7].strip(),  # 2401:4900:90:1000::9c3 (host)
-        lines[8].strip(),  # 2401:4900:0024:0506::10 (sourcehost)
-        lines[9].strip(),  # 6514 (port)
-        lines[10].strip(),  # MPGVPRHCK01ERPCCSM01 (host for 2nd entry)
-        lines[11].strip(),  # 2401:4900:90:1000::9c7 (host)
-        lines[12].strip(),  # 514 (port)
+        str(lines[0].strip()),  # PACKET_CORE_CONTROLLER
+        str(lines[1].strip()),  # 940157 (customerId)
+        str(lines[2].strip()),  # BHARTI_PCC-SM_00 (swltId)
+        str(lines[3].strip()),  # MPGVPRHCK01ERPCCSM01 (applicationId)
+        str(lines[4].strip()),  # smf-nsmf-service (address-pool)
+        str(lines[5].strip()),  # smf-nsmf-service (allow-shared-ip)
+        str(lines[6].strip()),  # loadbalancer IP (loadbalancer ip)
+        str(lines[7].strip()),  # 2401:4900:90:1000::9c3 (host)
+        str(lines[8].strip()),  # 2401:4900:0024:0506::10 (sourcehost)
+        str(lines[9].strip()),  # 6514 (port)
+        str(lines[10].strip()),  # MPGVPRHCK01ERPCCSM01 (host for 2nd entry)
+        str(lines[11].strip()),  # 2401:4900:90:1000::9c7 (host)
+        str(lines[12].strip()),  # 514 (port)
     ]
     
     # Map values to the keys
