@@ -137,8 +137,8 @@ def update_yaml(yaml_file_path, updates, updates_from_file):
         yaml.dump(data, f, default_flow_style=False, sort_keys=False)
 
 # Specify your YAML file path and the text file path for updates
-yaml_file_path = 'your_config_file.yaml'
-text_file_path = 'Day0filechanges.txt'  # File containing the values
+yaml_file_path = 'test_config.yaml'
+text_file_path = 'pcc_sm_input.txt'  # File containing the values
 
 # Read updates from the text file
 updates_from_file = read_updates_from_file(text_file_path)
