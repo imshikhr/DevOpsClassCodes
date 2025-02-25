@@ -10,6 +10,3 @@
 "61542"
 "2401:4900:54:e00::1634"
 "514"
-"BHPATRHCK05ERPCGUP11"
-"BHPATRHCK05ERPCGUP11"
-"bhpatrhck05erpcgup11.cnom.5gc.mnc052.mcc405.3gppnetwork.org"
