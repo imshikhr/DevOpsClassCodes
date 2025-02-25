@@ -31,52 +31,7 @@ def generate_updates(values):
                 }
             }
         }
-'''
-        'global': {
-            'licensing': {
-                    'sites': [
-                        {
-                                'hostname': values[3],            # 2401:4900:0024:0506::10
-                                'ip': values[4],            # 6514                                
-                        },
-                        {
-                                'hostname': values[5],           # 2401:4900:90:1000::9c7
-                                'ip': values[6],           # 514
-                        }
-                ]
-            }
-        },
-
-        'eric-cloud-native-base': {
-            'eric-fh-snmp-alarm-provider': {
-                'service': {
-                    'externalIPv6': {
-                        'loadBalancerIP': values[7]  # 2401:4900:90:1000::9c3
-                    }
-                }
-            }
-        },
-        
-        'eric-cloud-native-base': {
-            'eric-log-transformer': {
-                'egress': {
-                    'syslog': {
-                        'remoteHosts': [
-                            {
-                                'host': values[8],            # 2401:4900:0024:0506::10
-                                'port': values[9],            # 6514    
-                            },
-                            {
-                                'host': values[10],           # 2401:4900:90:1000::9c7
-                                'port': values[11],           # 514
-                            }
-                        ]
-                    }
-                }
-            }
-        }
     }
-'''
 def update_yaml(yaml_file_path, updates):
     # Load the existing YAML file
     with open(yaml_file_path, 'r') as f:
