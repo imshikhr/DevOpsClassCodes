@@ -30,7 +30,8 @@ def generate_updates(values):
                     ]
                 }
             }
-        },
+        }
+'''
         'global': {
             'licensing': {
                     'sites': [
@@ -75,7 +76,7 @@ def generate_updates(values):
             }
         }
     }
-
+'''
 def update_yaml(yaml_file_path, updates):
     # Load the existing YAML file
     with open(yaml_file_path, 'r') as f:
