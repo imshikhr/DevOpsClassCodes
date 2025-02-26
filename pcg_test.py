@@ -28,7 +28,15 @@ def generate_updates(values):
                     ]
                 }
             },
-          
+            'timezone': 'Asia/Kolkata',  # Static value
+            'nodeSelector': {
+                'eric-pod': 'paco'
+            },
+            'pcfw': {
+                'enabled': False
+            }
+        },
+
         'licensing': {
             'sites': [
                 {
@@ -40,6 +48,75 @@ def generate_updates(values):
                     'hostname': values[5],            # vijaywada.nels
                     'ip': values[6],                  # 2401:4900:d4:1700::05ee
                     'priority': 50
+                }
+            ]
+        },
+
+        'eric-tm-partition-distributor': {
+            'enabled': True,
+            'replicaCount': 5,
+            'resources': {
+                'partitionDistributor': {
+                    'limits': {
+                        'cpu': 1,
+                        'memory': '512Mi'
+                    },
+                    'requests': {
+                        'cpu': 0.2,
+                        'memory': '0.1Gi'
+                    }
+                }
+            }
+        },
+
+        'eric-pc-up-data-plane': {
+            'enabled': True,
+            'allowNetworkConfigChanges': False,
+            'deployment': {
+                'pinThreads': True
+            },
+            'acceleratedIo': {
+                'driver': 'bifurcated',
+                'enabled': True,
+                'pciDeviceArguments': [
+                    'rxq_cqe_comp_en=0'
+                ]
+            },
+            'replicaCount': 72,
+            'resources': {
+                'dataPlane': {
+                    'requests': {
+                        'openshift.io/sriovleftmellanox': 1,
+                        'openshift.io/sriovrightmellanox': 1,
+                        'hugepages-1Gi': '2Gi',
+                        'cpu': 16,
+                        'memory': '12Gi'
+                    },
+                    'limits': {
+                        'openshift.io/sriovleftmellanox': 1,
+                        'openshift.io/sriovrightmellanox': 1,
+                        'hugepages-1Gi': '2Gi',
+                        'cpu': 16,
+                        'memory': '12Gi'
+                    }
+                }
+            },
+            'sidecar': {
+                'at': False
+            },
+            'podDisruptionBudget': {
+                'maxUnavailable': 6
+            },
+            'interfaces': [
+                {
+                    'name': 'net1',
+                    'type': 'host-device',
+                    'networkAttachmentDefinition': False
+                },
+                {
+                    'name': 'net2',
+                    'type': 'host-device',
+                    'networkAttachmentDefinition': False
                 }
             ]
         }
