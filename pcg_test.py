@@ -30,35 +30,18 @@ def generate_updates(values):
                 }
             }
         },
-
-        'eric-cloud-native-base': {
-            'eric-tm-ingress-controller-cr': {
-                'service': {
-                    'externalIPv6': {
-                        'loadBalancerIP': values[6]  # 2401:4900:90:1000::9c3
+        'global': {
+            'licensing': {
+                'sites': [
+                    {
+                        'hostname': values[3],            # 2401:4900:0024:0506::10
+                        'ip': values[4]            # 6514    
+                    },
+                    {
+                        'hostname': values[5],           # 2401:4900:90:1000::9c7
+                        'ip': values[6]           # 514
                     }
-                }
-            }
-        },
-
-        'eric-cloud-native-base': {
-            'eric-log-transformer': {
-                'egress': {
-                    'syslog': {
-                        'remoteHosts': [
-                            {
-                                'host': values[7],            # 2401:4900:0024:0506::10
-                                'port': values[8],            # 6514
-                                'sourcehost': values[9]       # MPGVPRHCK01ERPCCSM01
-                            },
-                            {
-                                'host': values[10],           # 2401:4900:90:1000::9c7
-                                'port': values[11],           # 514
-                                'sourcehost': values[12]      # MPGVPRHCK01ERPCCSM01
-                            }
-                        ]
-                    }
-                }
+                ]
             }
         }
     }
@@ -83,8 +66,8 @@ def update_yaml(yaml_file_path, updates):
         yaml.dump(data, f, default_flow_style=False, sort_keys=False)
 
 # Specify the YAML file path and the input data file path
-yaml_file_path = 'test_config.yaml'
-input_file_path = 'pcc_sm_input.txt'  # File containing the dynamic input values
+yaml_file_path = 'pcg_values.yaml'
+input_file_path = 'pcg_test.txt'  # File containing the dynamic input values
 
 # Read input values from the text file
 input_values = read_input_from_file(input_file_path)
