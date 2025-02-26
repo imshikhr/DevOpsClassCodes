@@ -7,8 +7,8 @@ global:
   ericsson:
     licensing:
       licenseDomains:
-        - productType:
-          customerId:
+        - customerId:
+          productType:
           swltId:
   licensing:
     sites:
