@@ -30,6 +30,7 @@ def generate_updates(values):
                 }
             }
         }
+    }
 
 def update_yaml(yaml_file_path, updates):
     # Load the existing YAML file
