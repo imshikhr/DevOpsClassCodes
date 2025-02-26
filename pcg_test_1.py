@@ -8,7 +8,7 @@ updates = {
             'licensing': {
                 'licenseDomains': [
                     {
-                        'productType': 
+                        'productType':
                         'customerId':
                         'swltId':
                     }
