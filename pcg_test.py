@@ -68,8 +68,8 @@ def update_yaml(yaml_file_path, updates):
         yaml.dump(data, f, default_flow_style=False, sort_keys=False)
 
 # Specify the YAML file path and the input data file path
-yaml_file_path = 'your_config_file.yaml'
-input_file_path = 'input_data.txt'  # File containing the dynamic input values
+yaml_file_path = 'pcg_values.yaml'
+input_file_path = 'pcg_test.txt'  # File containing the dynamic input values
 
 # Read input values from the text file
 input_values = read_input_from_file(input_file_path)
