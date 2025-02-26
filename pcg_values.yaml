@@ -6,16 +6,16 @@ global:
   ericsson:
     licensing:
       licenseDomains:
-        - customerId: 
-          productType: 'PACKET_CORE_GATEWAY'
-          swltId: 'BHARTI_PCG-UP_00'            # To be checked
+        - productType:
+          customerId:
+          swltId:
   licensing:
     sites:
-      - hostname: 'uppal.nels'
-        ip: 2401:4900:d4:1600::0a14       ###Uppal
+      - hostname:
+        ip:
         priority: 30
-      - hostname: 'vijaywada.nels'
-        ip: 2401:4900:d4:1700::05ee     ###Vijaywada                       ###Syntax to be verified.
+      - hostname: 
+        ip:
         priority: 50
   timezone: Asia/Kolkata
   nodeSelector:
