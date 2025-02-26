@@ -1,4 +1,3 @@
-
 global:
 #  registry:
 #    url: evnfm-reg.mhna2rhck01erevnfm06.mcc404.mnc090.airtel.com
@@ -7,16 +6,16 @@ global:
   ericsson:
     licensing:
       licenseDomains:
-        - productType:
-          customerId: 
-          swltId:           # To be checked
+        - customerId: 
+          productType: 'PACKET_CORE_GATEWAY'
+          swltId: 'BHARTI_PCG-UP_00'            # To be checked
   licensing:
     sites:
-      - hostname: ''
-        ip: ''      ###Uppal
+      - hostname: 'uppal.nels'
+        ip: 2401:4900:d4:1600::0a14       ###Uppal
         priority: 30
-      - hostname: ''
-        ip: ''     ###Vijaywada                       ###Syntax to be verified.
+      - hostname: 'vijaywada.nels'
+        ip: 2401:4900:d4:1700::05ee     ###Vijaywada                       ###Syntax to be verified.
         priority: 50
   timezone: Asia/Kolkata
   nodeSelector:
@@ -292,7 +291,7 @@ eric-cloud-native-base:
     service:
       externalIPv6 :
         enabled: true
-        loadBalancerIP: 
+        loadBalancerIP: 2401:4900:54:e00::1630
         annotations:
           addressPoolName: pcg-oam
           sharedVIPLabel: pcg-oam
@@ -362,10 +361,10 @@ eric-cloud-native-base:
           - contains: -privacy-
             field: "[metadata][category]"
         remoteHosts:
-          - host:                        #SIEM hashed out after testing
-            port: 
-          - host:                        #CAC-Alog from IP Plan
-            port:             
+          - host: 2401:4900:0024:0506::d                        #SIEM hashed out after testing
+            port: 61542
+          - host: 2401:4900:54:e00::1634                        #CAC-Alog from IP Plan
+            port: 514            
         tls:
           enabled: false
         filter: ruby { code => "event.set('message', event.get('[message]')+' '+event.get('[subject]').to_s || '-')" }
