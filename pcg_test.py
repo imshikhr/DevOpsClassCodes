@@ -29,7 +29,22 @@ def generate_updates(values):
                     ]
                 }
             }
-        }
+        },
+        'global': {
+                'licensing': {
+                    'sites': [
+                        {
+                            'hostname': values[3],
+                            'ip': values[4]
+                        },
+                        {
+                            'hostname': values[5],
+                            'ip': values[6],
+                        }
+                        
+                    ]
+                }
+            }
     }
     
 def update_yaml(yaml_file_path, updates):
