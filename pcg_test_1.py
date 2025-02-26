@@ -8,58 +8,27 @@ updates = {
             'licensing': {
                 'licenseDomains': [
                     {
-                        'productType': '',  # placeholder
-                        'customerId': '',   # placeholder
-                        'swltId': ''        # placeholder
+                        'productType': 
+                        'customerId':
+                        'swltId':
+                    }
+                ]
+            },
+            'licensing': {
+                'sites': [
+                    {
+                        'hostname':
+                        'ip':
+                    },
+                    {
+                        'hostname':
+                        'ip':
                     }
                 ]
             }
-        },
-        'timezone': 'Asia/Kolkata',  # Update Timezone
-        'applicationId': '',  # Update Application ID
-    },
-    'eric-pc-sm': {
-        'eric-pc-sm-notification-forwarder': {
-            'services': {
-                'namfnotification-ipv6': {
-                    'annotations': {
-                        'metallb.universe.tf/address-pool': '',
-                        'metallb.universe.tf/allow-shared-ip': ''
-                    }
-                }
-            }
-        }
-    },
-    'eric-cloud-native-base': {
-        'eric-tm-ingress-controller-cr': {
-            'service': {
-                'externalIPv6': {
-                    'loadBalancerIP': ''
-                }
-            }
-        }
-    },
-    'eric-cloud-native-base': {
-        'eric-log-transformer': {
-            'egress': {
-                'syslog': {
-                    'remoteHosts': [
-                        {
-                            'host': '',
-                            'port': '',
-                            'sourcehost': ''
-                        },
-                        {
-                            'host': '',
-                            'port': '',
-                            'sourcehost': ''
-                        }
-                    ]
-                }
-            }
         }
     }
-}    
+}  
 
 def read_updates_from_file(file_path):
     """
@@ -130,8 +99,8 @@ def update_yaml(yaml_file_path, updates, updates_from_file):
         yaml.dump(data, f, default_flow_style=False, sort_keys=False)
 
 # Specify your YAML file path and the text file path for updates
-yaml_file_path = 'test_config.yaml'
-text_file_path = 'pcc_sm_input.txt'  # File containing the values
+yaml_file_path = 'pcg_values.yaml'
+text_file_path = 'pcg_test.txt'  # File containing the values
 
 # Read updates from the text file
 updates_from_file = read_updates_from_file(text_file_path)
