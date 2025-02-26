@@ -29,22 +29,7 @@ def generate_updates(values):
                     ]
                 }
             }
-        },
-        'global': {
-            'licensing': {
-                'sites': [
-                    {
-                        'hostname': values[3],            # 2401:4900:0024:0506::10
-                        'ip': values[4]            # 6514    
-                    },
-                    {
-                        'hostname': values[5],           # 2401:4900:90:1000::9c7
-                        'ip': values[6]           # 514
-                    }
-                ]
-            }
         }
-    }
 
 def update_yaml(yaml_file_path, updates):
     # Load the existing YAML file
