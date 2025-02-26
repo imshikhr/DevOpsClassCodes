@@ -8,21 +8,21 @@ updates = {
             'licensing': {
                 'licenseDomains': [
                     {
-                        'productType':
-                        'customerId':
-                        'swltId':
+                        'productType':''
+                        'customerId':''
+                        'swltId':''
                     }
                 ]
             },
             'licensing': {
                 'sites': [
                     {
-                        'hostname':
-                        'ip':
+                        'hostname':''
+                        'ip':''
                     },
                     {
-                        'hostname':
-                        'ip':
+                        'hostname':''
+                        'ip':''
                     }
                 ]
             }
